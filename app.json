@@ -2,11 +2,7 @@
   "expo": {
     "name": "Atlas Travel",
     "slug": "atlas-travel-rn",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,11 +14,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "packagerOpts": {
+      "sourceExts": ["ts", "tsx"],
+      "transformer": "node_modules/react-native-typescript-transformer/index.js"
     }
   }
 }
