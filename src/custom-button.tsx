@@ -13,7 +13,12 @@ import {
   FlexboxProps,
 } from "styled-system";
 import { LinearGradient } from "expo-linear-gradient";
-import { NativeSyntheticEvent, NativeTouchEvent, View } from "react-native";
+import {
+  NativeSyntheticEvent,
+  NativeTouchEvent,
+  View,
+  StyleProp,
+} from "react-native";
 // import { TouchableOpacity } from "react-native-gesture-handler";
 
 interface ButtonContainerProps {
@@ -25,6 +30,7 @@ interface ButtonTextProps {
 }
 
 interface CustomButtonProps extends ButtonTextProps, ButtonContainerProps {
+  style?: any;
   text: string;
   onPress?: (ev: NativeSyntheticEvent<NativeTouchEvent>) => void;
 }
@@ -117,7 +123,6 @@ ${color}
   border-radius: 25px;
   background-color: ${(props) => props.backgroundColor};
  
-  border-width: 3px;
 
   shadow-color: #000;
   shadow-offset: 0px 5px;
@@ -126,6 +131,7 @@ ${color}
   elevation: 1;
 
 `;
+// border-width: 3px;
 
 // padding: 12px;
 // overflow: hidden;

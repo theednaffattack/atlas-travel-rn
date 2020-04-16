@@ -9,6 +9,8 @@ import faker from "faker";
 
 import { Center } from "./center";
 import { addProductRoutes, ProductParamLlist } from "./add-product-routes";
+import { LoginButtonLight } from "./imported-buttons";
+import CustomButton from "./custom-button";
 
 export type SearchParamList = {
   Search: undefined;
@@ -64,7 +66,7 @@ function Search({ navigation }) {
 
 export const SearchStack: React.FC<SearchStackProps> = ({}) => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{}}>
       <Stack.Screen name="Search" component={Search} />
 
       {addProductRoutes(Stack)}

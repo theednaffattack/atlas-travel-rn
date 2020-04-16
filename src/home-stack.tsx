@@ -7,7 +7,7 @@ import { Button, FlatList, Text, TouchableOpacity } from "react-native";
 import faker from "faker";
 import { RouteProp } from "@react-navigation/native";
 
-import { Center } from "./center";
+import { Center, HomeCenter } from "./center";
 import {} from "react-native-gesture-handler";
 import { AuthContext } from "./auth-provider";
 import { addProductRoutes, ProductParamLlist } from "./add-product-routes";
@@ -27,7 +27,7 @@ const Stack = createStackNavigator<HomeParamList>();
 
 function Feed({ navigation }: HomeStackNavProps<"Feed">) {
   return (
-    <Center>
+    <HomeCenter bg="#ccc">
       <FlatList
         keyExtractor={(product, idx) => product + idx}
         data={Array.from(Array(50), () => faker.commerce.product())}
@@ -45,14 +45,21 @@ function Feed({ navigation }: HomeStackNavProps<"Feed">) {
         }}
         style={{ width: "100%" }}
       />
-    </Center>
+    </HomeCenter>
   );
 }
 
 export const HomeStack: React.FC<HomeStackProps> = ({}) => {
   const { logout } = React.useContext(AuthContext);
   return (
-    <Stack.Navigator initialRouteName="Feed">
+    <Stack.Navigator
+      initialRouteName="Feed"
+      screenOptions={{
+        cardStyle: {
+          backgroundColor: "pink",
+        },
+      }}
+    >
       {addProductRoutes(Stack)}
       <Stack.Screen
         name="Feed"

@@ -9,7 +9,7 @@ export const MyView = styled.View<ColorProps>`
   flex: 1;
   align-items: center;
   justify-content: center;
-  /* ${color} */
+  ${color}
 `;
 
 export const Center: React.FC<CenterProps> = ({ children }) => {
