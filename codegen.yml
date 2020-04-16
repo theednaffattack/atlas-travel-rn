@@ -1,0 +1,13 @@
+# schema: ${PROD_SCHEMA_PATH}
+# schema: ${TEST_SCHEMA_PATH}
+schema: "http://192.168.1.6:7000/graphql" # ${DEV_SCHEMA_PATH}
+documents: "./src/graphql/*.graphql"
+generates:
+  ./src/__generated__/ts-apollo.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+respectGitIgnore: true
