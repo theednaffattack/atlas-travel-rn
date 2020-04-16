@@ -8,10 +8,10 @@
 - [x] Home
 - [x] Sign in
 - [x] Join us
-- [ ] Confirmation
-- [ ] Discover
-- [ ] Traveling
-- [ ] Filter
+- [x] Confirmation
+- [x] Discover
+- [x] Traveling
+- [x] Filter
 - [ ] Hotel
 - [ ] Map View
 - [ ] Reviews
